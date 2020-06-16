@@ -1,0 +1,43 @@
+.intro-container {
+  display: grid;
+  grid-template-rows: 35vh 35vh 15vh;
+}
+.intro-text {
+  display: grid;
+  grid-template-columns: 40vw 60vw;
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: 40vw 30vw 30vw;
+}
+.intro-grid img {
+  object-fit: cover;
+  width: 40vw;
+}
+.intro-grid h3 {
+  justify-self: center;
+}
+.grid-center {
+  align-self: center;
+  margin-bottom: 5vh;
+}
+svg {
+  margin-left: 1vw;
+}
+.justify {
+  justify-self: center;
+}
+@media screen and (max-width: 600px) {
+  .intro-container {
+    display: grid;
+    grid-template-rows: 20vh 15vh 7vh;
+  }
+  .intro-text {
+    display: block;
+    margin-top: 4vh;
+  }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 40vw 10vw 45vw;
+  }
+}

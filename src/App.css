@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #146396;
+  text-decoration: none;
+  cursor: pointer;
+}
+body {
+  line-height: 1.7;
+}
+.App {
+  height: 100vh;
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+}

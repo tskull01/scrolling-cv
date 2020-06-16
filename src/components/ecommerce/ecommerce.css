@@ -1,0 +1,82 @@
+.eco {
+  display: grid;
+  grid-template-rows: 15vh 85vh;
+  max-width: 100%;
+}
+.edesc {
+  margin: 3vw;
+}
+.ecommerce {
+  display: grid;
+  grid-template-rows: 7vh 78vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  max-width: 100%;
+}
+.navgrid {
+  display: grid;
+  grid-template-columns: 7vw auto 7vw;
+  width: 100%;
+  border: 1px solid black;
+}
+.itemview {
+  -webkit-columns: 3 150px;
+  -moz-columns: 3 150px;
+  columns: 3 150px;
+  width: 100%;
+  height: fit-content;
+}
+.item {
+  width: 100%;
+}
+.item:hover {
+  cursor: pointer;
+}
+.view-container {
+  display: grid;
+  grid-template-columns: 60vw 40vw;
+  height: 78vh;
+  border: 2px solid olivedrab;
+}
+.full-img img {
+  object-fit: cover;
+}
+.full-img div {
+  justify-items: center;
+  justify-content: center;
+  object-fit: cover;
+}
+.img-flex {
+  display: flex;
+  justify-content: space-between;
+  width: 40vw;
+  height: 100%;
+}
+.img-flex img {
+  width: 33%;
+  height: auto;
+}
+#cart {
+  justify-self: right;
+}
+.center {
+  justify-self: center;
+}
+.cart-view {
+  display: flex;
+  flex-direction: column;
+}
+.cart-item {
+  display: grid;
+  grid-template-columns: 15vw 15vw;
+}
+.vis {
+  visibility: visible;
+}
+.invis {
+  visibility: hidden !important;
+}
+.options {
+  display: grid;
+  grid-template-rows: 10vh 10vh 50vh;
+}
