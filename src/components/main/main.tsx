@@ -9,6 +9,7 @@ import Contact from "../contact";
 import "./main.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { from, Observable, of } from "rxjs";
 
 export class Main extends Component {
   componentDidMount() {
@@ -29,7 +30,19 @@ export class Main extends Component {
       });
     }
   }
-
+  testEmail = () => {
+    let email = "tskulley29@yahoo.com";
+    let emailAnswer = from(
+      fetch("/.netlify/functions/sendEmail", {
+        body: JSON.stringify({
+          email: email,
+        }),
+        method: "POST",
+      })
+    );
+    emailAnswer.subscribe((answer) => console.log(answer));
+    return emailAnswer;
+  };
   render() {
     return (
       <div className="container">
@@ -55,7 +68,7 @@ export class Main extends Component {
           <Ecommerce />
         </div>
         <div className="section text-section">
-          <Scrollingtext text="" />
+          <button onClick={this.testEmail}>Test Email</button>
         </div>
         <div className="section text-section">
           <Scrollingtext text="" />
