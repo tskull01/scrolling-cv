@@ -1,0 +1,34 @@
+.cart-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cart-flex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+.cart-flex::-webkit-scrollbar {
+  display: none;
+}
+.cart-item {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.cart-item img {
+  max-height: 22vh;
+}
+.MuiButton-label {
+  color: #146396;
+}
+.MuiIconButton-label {
+  color: white;
+}

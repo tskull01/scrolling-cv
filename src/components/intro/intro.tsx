@@ -8,34 +8,32 @@ class intro extends Component {
       <div className="intro-container">
         <div className="intro-text">
           <div></div>
-          <div className="grid-center">
+          <div className="intro-center">
             <h3>
-              As a frontend engineer I build complex user interfaces
-              {window.screen.width > 800 ? <br /> : console.log("")}
-              that are responsive to any viewport.
+              As a frontend engineer I build complex user interfaces that are
+              responsive to any viewport.
             </h3>
           </div>
         </div>
         <div className="intro-grid">
           <img src="http://placecorgi.com/400/400" />
-          <div className="grid-center justify">
-            <GitHubIcon />{" "}
-          </div>
-          <div className="grid-center">
-            <h3>
-              <a href="github.com/tskull01">github.com/tskull01</a>
-            </h3>
-          </div>
-        </div>
-        <div className="intro-grid">
-          <div></div>
-          <div className="grid-center justify">
-            <EmailIcon />{" "}
-          </div>
-          <div>
-            <h3 className="grid-center">
-              <a href="mailto:tskulley31@yahoo.com">github.com/tskull01</a>
-            </h3>
+          <div className="icon-adjust">
+            <div className="git-flex">
+              <GitHubIcon />
+              <h3>
+                <a href="https://www.github.com/tskull01">
+                  github.com/tskull01
+                </a>
+              </h3>
+            </div>
+            <div className="git-flex">
+              <EmailIcon />{" "}
+              <h4>
+                <a href="mailto:skulley.tyler@gmail.com">
+                  skulley.tyler@gmail.com
+                </a>
+              </h4>
+            </div>
           </div>
         </div>
       </div>

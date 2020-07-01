@@ -1,0 +1,12 @@
+.logos {
+  display: flex;
+  justify-content: space-evenly;
+}
+.logos img {
+  height: 20vh;
+}
+.dev-container h3 {
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 14vh;
+}
