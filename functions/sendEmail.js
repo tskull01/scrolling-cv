@@ -2,7 +2,7 @@ const mailgun = require("mailgun-js");
 
 exports.handler = function (event, context, callback) {
   const data = JSON.parse(event.body);
-  console.log(data);
+  console.log(data.email);
   const mg = mailgun({
     apiKey: process.env.MAILGUN_API_KEY,
     domain: process.env.DOMAIN,
