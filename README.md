@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-This project was bootstrapped with [Create React App](https://githu.om/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
