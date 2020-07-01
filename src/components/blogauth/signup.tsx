@@ -90,6 +90,7 @@ export default class signup extends Component<ISignupProps> {
         />
         <TextField
           required
+          autoFocus={true}
           id="outlined-required"
           label="Password"
           type="password"

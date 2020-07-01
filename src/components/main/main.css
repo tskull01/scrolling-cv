@@ -24,7 +24,7 @@
     width: max-content;
     height: 100vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     -ms-overflow-style: none;
   }
   .container:-webkit-scrollbar {
@@ -36,9 +36,6 @@
     z-index: 2;
     color: #146396;
   }
-  .text-section {
-    width: 85vw !important;
-  }
 }
 /* background: -webkit-linear-gradient(to bottom, #f5f5f5 50%, white 50%);
     background: -moz-linear-gradient(to bottom, #f5f5f5 50%, white 50%);
@@ -49,5 +46,11 @@
   border-color: #146396;
 }
 .MuiFormControl-root:focus {
+  border-color: #146396;
+}
+.Mui-focused {
+  border-color: #146396;
+}
+.MuiInputBase-input {
   border-color: #146396;
 }

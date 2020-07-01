@@ -5,3 +5,9 @@
   width: 100%;
   height: 100%;
 }
+.current-text {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

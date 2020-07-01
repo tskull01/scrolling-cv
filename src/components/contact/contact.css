@@ -1,0 +1,37 @@
+.contact-section {
+  height: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-top: 3vh;
+  }
+  .inputs {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 601px) {
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-top: 3vh;
+  }
+  .inputs {
+    margin-left: 10vw;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50%;
+  }
+}
