@@ -40,7 +40,9 @@ export class Main extends Component {
         method: "POST",
       })
     );
-    emailAnswer.subscribe((answer) => console.log(answer));
+    emailAnswer.subscribe((answer) => {
+      answer.headers.forEach((header) => console.log(header));
+    });
     return emailAnswer;
   };
   render() {
@@ -50,19 +52,31 @@ export class Main extends Component {
           <Intro />
         </div>
         <div className="section text-section">
-          <Scrollingtext text="User interfaces can communicate with a dataset and expose functionality to the user. This includes searching the data, adding to the data, and editing the data." />
+          <Scrollingtext
+            id={1}
+            text="User interfaces can communicate with a dataset and expose functionality to the user. This includes searching the data, adding to the data, and editing the data."
+          />
         </div>
         <div className="section text-section">
-          <Scrollingtext text="This can be applied in a multitude of ways but this one uses a Google API to offer location options and then convert those options into a set of longitude and latitude. That location set is used by another API with trail information to query and display the data. " />
+          <Scrollingtext
+            id={2}
+            text="This can be applied in a multitude of ways, but this one uses a Google API to offer location options. The user selection is then converted into a set of longitude and latitude. That location set is used by another API with trail information to query and display the data. "
+          />
         </div>
         <div className="section">
           <Trailfinder />
         </div>
         <div className="section text-section">
-          <Scrollingtext text="Front end engineers are also responsible for implementing any type of eCommerce function. This includes all kinds of functions like restaurant orders, product purchases, or registering for events. " />
+          <Scrollingtext
+            id={3}
+            text="Front end engineers are also responsible for implementing any type of eCommerce function. This includes all kinds of functions like restaurant orders, product purchases, or registering for events. "
+          />
         </div>
         <div className="section text-section">
-          <Scrollingtext text="The example shows a simple eCommerce interface before the checkout process. This same checkout process can be applied to any product or service." />
+          <Scrollingtext
+            id={4}
+            text="The example shows a simple eCommerce interface before the checkout process. This same checkout process can be applied to any product or service."
+          />
         </div>
         <div className="section">
           <Ecommerce />
@@ -71,7 +85,10 @@ export class Main extends Component {
           <button onClick={this.testEmail}>Test Email</button>
         </div>
         <div className="section text-section">
-          <Scrollingtext text="This example shows a blog that restricts access to content until after the user has signed in. This model is essential for anyone being paid for content like streaming services, print publications, and individual content creators. " />
+          <Scrollingtext
+            id={6}
+            text="This example shows a blog that restricts access to content until after the user has signed in. This model is essential for anyone being paid for content like streaming services, print publications, and individual content creators. "
+          />
         </div>
         <div className="section gap-top">
           <Blogmain />

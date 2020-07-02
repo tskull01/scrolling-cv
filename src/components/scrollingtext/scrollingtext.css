@@ -6,7 +6,7 @@
   height: 100%;
 }
 .current-text {
-  height: 60%;
+  height: 40vh;
   width: 70%;
   display: flex;
   justify-content: center;
