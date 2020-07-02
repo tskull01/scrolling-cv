@@ -45,12 +45,12 @@
   background-color: #f5f5f5;
   border-color: #146396;
 }
-.MuiFormControl-root:focus {
-  border-color: #146396;
+.MuiOutlineInput-root.Mui-focused {
+  border-color: #146396 !important;
 }
-.Mui-focused {
-  border-color: #146396;
+.MuiFormLabel-root.Mui-focused {
+  color: #146396 !important;
 }
-.MuiInputBase-input {
-  border-color: #146396;
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #146396 !important;
 }

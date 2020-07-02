@@ -13,7 +13,7 @@ export class contact extends Component {
 
   onSubmit = () => {
     let emailAnswer = from(
-      fetch("/.netlify/functions/sendContact", {
+      fetch("https://www.twsprogramming.com/.netlify/functions/sendContact", {
         body: JSON.stringify({
           name: this.state.userName,
           email: this.state.userEmail,
