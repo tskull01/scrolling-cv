@@ -66,7 +66,7 @@
   }
   .blog-image {
     max-width: 100%;
-    height: auto;
+    height: 66.66%;
   }
   .blog-title {
     align-self: center;
@@ -102,7 +102,7 @@
   }
   .blog-image {
     max-width: 50vw;
-    height: auto;
+    height: 66.66%;
   }
   .article-content {
     margin: 1vw;
@@ -141,7 +141,7 @@
   }
   .blog-image {
     max-width: 50%;
-    height: auto;
+    height: 66.66%;
   }
   .login-view > * {
     margin-bottom: 3vh !important;
@@ -156,4 +156,7 @@
 .article-content p a {
   font-weight: 600;
   cursor: pointer;
+}
+.article-img {
+  opacity: 0;
 }

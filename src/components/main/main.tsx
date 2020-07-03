@@ -162,7 +162,7 @@ export class Main extends Component {
             <div style={{ width: "100%", height: "100%" }}></div>
           )}
         </div>
-        <div className="section">
+        <div className="section shortened-section">
           <Ecommerce />
         </div>
         <div className="section text-section">
@@ -182,10 +182,10 @@ export class Main extends Component {
         <div className="section gap-top">
           <Blogmain />
         </div>
-        <div className="section skills-section">
+        <div className="section shortened-section">
           <Skills />
         </div>
-        <div className="section contact-section">
+        <div className="section shortened-section">
           <Contact />
         </div>
       </div>

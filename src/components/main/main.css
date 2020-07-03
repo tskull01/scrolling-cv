@@ -21,11 +21,8 @@
   .text-section {
     height: 50vh !important;
   }
-  .skills-section {
-    height: 70vh !important;
-  }
-  .contact-section {
-    height: 70vh !important;
+  .shortened-section {
+    height: 80vh !important;
   }
 }
 @media screen and (min-width: 601px) {

@@ -1,7 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, createRef, RefObject, Ref, useRef } from "react";
 import Blogs from "./blogcontent";
 import Blog from "./blog";
 import "./blog.css";
+import Placeholder from "../../images/placeholder_16_9.png";
+import { gsap } from "gsap";
+import { fromEvent, Observable } from "rxjs";
+
 interface IViewProps {
   selectedBlog: Blog;
   showContent: boolean;
@@ -9,6 +13,30 @@ interface IViewProps {
   signupSelected: () => void;
 }
 export default class blogview extends Component<IViewProps> {
+  state = {
+    imgLoaded: false,
+  };
+  imgLoaded = () => {
+    this.setState({ imgLoaded: true });
+    let placeholder = document.getElementById("placeholder");
+    if (placeholder) {
+      placeholder.style.display = "none";
+    }
+    gsap.to(".article-img", {
+      opacity: 1,
+      duration: 0.75,
+    });
+  };
+  imgLoadEvent = () => {
+    let imgRef = document.getElementsByClassName("article-img")[0];
+    if (imgRef) {
+      let imgSub = fromEvent(imgRef, "load").subscribe((loaded: any) => {
+        this.imgLoaded();
+      });
+    } else {
+      console.log("image ref null");
+    }
+  };
   render() {
     let {
       title,
@@ -27,7 +55,31 @@ export default class blogview extends Component<IViewProps> {
         </h6>
         <h5>{summary}</h5>
         <div className="article-grid">
-          <img src={imageSrc}></img>
+          {this.state.imgLoaded ? (
+            <img
+              src={imageSrc}
+              className="article-img"
+              onLoad={this.imgLoaded}
+              id="article-img"
+              style={{ display: "block" }}
+            ></img>
+          ) : (
+            <div>
+              <img
+                src={imageSrc}
+                className="article-img"
+                onLoad={this.imgLoaded}
+                id="article-img"
+                style={{ display: "none" }}
+              ></img>
+              <img
+                src={Placeholder}
+                onLoad={this.imgLoadEvent}
+                id="placeholder"
+              />
+            </div>
+          )}
+
           {this.props.showContent ? (
             <p className="article-content">
               {content} <br /> <br />
