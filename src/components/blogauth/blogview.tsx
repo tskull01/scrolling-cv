@@ -27,6 +27,9 @@ export default class blogview extends Component<IViewProps> {
       duration: 0.75,
     });
   };
+  componentDidMount() {
+    document.getElementById("article-view")?.scrollTo(0, 0);
+  }
   imgLoadEvent = () => {
     let imgRef = document.getElementsByClassName("article-img")[0];
     if (imgRef) {
@@ -48,7 +51,7 @@ export default class blogview extends Component<IViewProps> {
       summary,
     } = this.props.selectedBlog;
     return (
-      <div className="article-view">
+      <div className="article-view" id="article-view">
         <h3>{title}</h3>
         <h6>
           {author} | {datePublished}

@@ -87,6 +87,7 @@ export default class productview extends Component<IViewProps> {
               return (
                 <img
                   src={image}
+                  key={i}
                   alt="Image options"
                   onClick={(e) => this.imageClick(i)}
                 />

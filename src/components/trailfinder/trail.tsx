@@ -37,7 +37,7 @@ export default class trail extends Component<ITrailProps> {
         <h5 style={{ alignSelf: "center" }}>No results found</h5>
       ) : (
         this.props.trails.map((trail: any, i: number) => (
-          <div className="result-item" key={trail.name}>
+          <div className="trail-item" key={trail.name}>
             <img
               src={trail.imageSrc !== "" ? trail.imageSrc : trailDefault}
               alt=""
