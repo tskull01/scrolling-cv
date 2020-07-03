@@ -58,7 +58,6 @@ export default class trail extends Component<ITrailProps> {
           </div>
         ))
       );
-    console.log(this.props.trails);
     return <div className="result-flex">{trailInfo}</div>;
   }
 }

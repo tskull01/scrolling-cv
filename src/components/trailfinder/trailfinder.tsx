@@ -100,7 +100,6 @@ export default class trailfinder extends Component {
     //Mapping through the predictions and grabbing the description
     //Object contains the description and the index of that description
     let newOptions = array.map((prediction: any, i: number) => {
-      console.log(prediction.description);
       return new OptionObject(i, prediction.description);
     });
     let optionDescriptions = newOptions.map(
@@ -130,7 +129,6 @@ export default class trailfinder extends Component {
     ).then((response) => {
       const apiResponse = response.json();
       apiResponse.then((trailResponse) => {
-        console.log(trailResponse.trails);
         let trails = trailResponse.trails.map(
           (trail: any) =>
             new TrailObject(
@@ -141,7 +139,6 @@ export default class trailfinder extends Component {
               trail.summary
             )
         );
-        console.log(trails);
         this.setState({ trailsArray: trails, loading: false });
       });
     });
@@ -149,20 +146,22 @@ export default class trailfinder extends Component {
   checkOptions = (option: any, value: any) => {
     return this.state.options.includes(value);
   };
-  componentDidUpdate() {
+  componentDidMount() {
     if (
       this.state.autocomplete.current === null ||
-      this.state.geocoder.current === null
+      (this.state.geocoder.current === null &&
+        (window as any).google.maps &&
+        (window as any)?.google?.maps.places)
     ) {
       this.setState({
         autocomplete: {
-          current: new (window as any).google.maps.places.AutocompleteService(),
+          current: new (window as any)()?.google?.maps.places.AutocompleteService(),
         },
-      });
-      this.setState({
-        geocoder: { current: new (window as any).google.maps.Geocoder() },
+        geocoder: { current: new (window as any)()?.google?.maps.Geocoder() },
       });
     }
+    //Sets original value to Boulder, CO
+    this.optionSelected("ChIJ06-NJ06Na4cRWIAboHw7Ocg");
   }
   render() {
     return (

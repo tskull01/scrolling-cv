@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import "./contact.css";
 import { from, Observable, of } from "rxjs";
+import Button from "@material-ui/core/Button";
+
 export class contact extends Component {
   state = {
     userEmail: "",
@@ -11,7 +12,7 @@ export class contact extends Component {
     emailSent: false,
   };
 
-  onSubmit = () => {
+  sendContact = () => {
     let emailAnswer = from(
       fetch("https://www.twsprogramming.com/.netlify/functions/sendContact", {
         body: JSON.stringify({
@@ -28,8 +29,6 @@ export class contact extends Component {
   };
   setValue = (e: any, value: string) => {
     this.setState({ value: e.target.value });
-    console.log(this.state.userEmail);
-    console.log(this.state.userName);
   };
   render() {
     let contactCurrent = this.state.emailSent ? (
@@ -43,6 +42,7 @@ export class contact extends Component {
           <TextField
             id="contact-name"
             label="Your Name"
+            fullWidth={true}
             type="search"
             variant="outlined"
             onChange={(e) => this.setValue(e, "userName")}
@@ -51,6 +51,7 @@ export class contact extends Component {
             id="contact-email"
             label="Your Email"
             type="search"
+            fullWidth={true}
             variant="outlined"
             onChange={(e) => this.setValue(e, "userEmail")}
           />
@@ -59,10 +60,19 @@ export class contact extends Component {
             label="Your Message"
             type="search"
             variant="outlined"
+            fullWidth={true}
             multiline
             rows={3}
             onChange={(e) => this.setValue(e, "userMessage")}
           />
+        </div>
+        <div className="contact-button">
+          <Button
+            onClick={this.sendContact}
+            style={{ backgroundColor: "#f5f5f5" }}
+          >
+            Send Message
+          </Button>
         </div>
       </div>
     );

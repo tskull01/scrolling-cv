@@ -64,11 +64,13 @@ export class Ecommerce extends Component<IComProps, IComState> {
         },
         cartOpen: false,
       });
+      this.callFadeIn();
     } else {
       this.setState({
         currentView: { prev: this.state.currentView.current, current: 2 },
         cartOpen: true,
       });
+      this.callFadeIn();
     }
   };
   selectItem = (e: any, item: Item) => {
@@ -76,6 +78,7 @@ export class Ecommerce extends Component<IComProps, IComState> {
       currentView: { prev: this.state.currentView.current, current: 1 },
       selectedItem: item,
     });
+    this.callFadeIn();
   };
   addToCart = () => {
     console.log("adding to cart");
@@ -83,22 +86,25 @@ export class Ecommerce extends Component<IComProps, IComState> {
       currentView: { prev: this.state.currentView.current, current: 0 },
       currentCart: [...this.state.currentCart, this.state.selectedItem],
     });
+    this.callFadeIn();
   };
   returnView = () => {
     this.setState({
       currentView: { prev: this.state.currentView.current, current: 0 },
     });
+    this.callFadeIn();
   };
   checkoutFunc = () => {
     this.setState({ currentCart: [], currentView: { prev: 2, current: 0 } });
+    this.callFadeIn();
   };
-  componentDidUpdate() {
+  callFadeIn = () => {
     gsap.from(".itemlayout", {
       duration: 0.5,
       opacity: 0,
       ease: "linear",
     });
-  }
+  };
   //Style Functions
   hideCartStyle = () => {
     if (this.state.cartOpen) {
@@ -160,7 +166,10 @@ export class Ecommerce extends Component<IComProps, IComState> {
               <AddShoppingCartIcon />
             </IconButton>
           </nav>
-          <div style={{ backgroundColor: "#f5f5f5" }} className="itemlayout">
+          <div
+            style={{ backgroundColor: "#f5f5f5", opacity: "1 !important" }}
+            className="itemlayout"
+          >
             {currentDisplay}
           </div>
         </div>

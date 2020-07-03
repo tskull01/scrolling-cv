@@ -14,7 +14,6 @@ export default class productmain extends Component<IMainProps> {
     document.querySelector(qs) as FromEventTarget<Event>;
 
   spacing = (i: number) => {
-    console.log(i + "index and length" + this.props.items.length);
     if (window.screen.width < 600) {
       if (i + 1 === this.props.items.length)
         return {
@@ -34,7 +33,6 @@ export default class productmain extends Component<IMainProps> {
   }
 
   render() {
-    console.log(this.props.items[0].images[0]);
     let displayItems = this.props.items.map((item, i) => (
       <img
         className="item"
