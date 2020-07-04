@@ -49,6 +49,11 @@
   .vis {
     visibility: visible;
   }
+  .ecom-title {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
 }
 @media screen and (max-width: 600px) {
   .itemlayout {

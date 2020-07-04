@@ -161,7 +161,9 @@ export class Ecommerce extends Component<IComProps, IComState> {
             >
               <NavigateBeforeIcon />
             </IconButton>
-            <div></div>
+            <div className="ecom-title">
+              <h5>Men's Running Shoes</h5>
+            </div>
             <IconButton id="cart" onClick={this.openCart}>
               <AddShoppingCartIcon />
             </IconButton>
