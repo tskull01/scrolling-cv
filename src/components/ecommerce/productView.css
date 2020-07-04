@@ -16,6 +16,7 @@
   }
   img {
     max-width: 100%;
+    height: auto;
   }
   .img-group img:hover {
     cursor: pointer;
@@ -23,7 +24,7 @@
   .img-group img {
     width: 33%;
     max-width: 33%;
-    height: auto;
+    height: 33%;
   }
   h3 {
     align-self: center;

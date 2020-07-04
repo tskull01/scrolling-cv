@@ -23,7 +23,7 @@
   }
   .trail-item {
     display: flex;
-    height: 25vh;
+    height: 40vh;
     width: 100%;
   }
   .trail-detail {
@@ -34,8 +34,8 @@
   }
   .trail-item img {
     object-fit: cover;
-    width: 200px;
-    height: auto;
+    width: 350px;
+    height: 220px;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -77,7 +77,14 @@
   }
   .trail-item img {
     object-fit: cover;
+    width: 300px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .trail-item img {
+    object-fit: cover;
     width: 200px;
-    height: auto;
+    height: 150px;
   }
 }

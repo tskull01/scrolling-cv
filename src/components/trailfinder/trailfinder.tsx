@@ -130,6 +130,9 @@ export default class trailfinder extends Component {
     ).then((response) => {
       const apiResponse = response.json();
       apiResponse.then((trailResponse) => {
+        console.log(trailResponse);
+        console.log(trailResponse.trails);
+
         let trails = trailResponse.trails.map(
           (trail: any) =>
             new TrailObject(
