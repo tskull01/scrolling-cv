@@ -35,7 +35,7 @@
   .trail-item img {
     object-fit: cover;
     width: 350px;
-    height: 220px;
+    height: 90%;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 1000px) {
@@ -78,14 +78,14 @@
   .trail-item img {
     object-fit: cover;
     width: 300px;
-    height: 200px;
+    height: 90%;
   }
 }
 @media screen and (max-width: 600px) {
   .trail-item img {
     object-fit: cover;
     width: 200px;
-    height: 150px;
+    height: 90%;
   }
   .trail-item {
     display: flex;
