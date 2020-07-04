@@ -15,6 +15,7 @@
   }
   .scroll-text h3 {
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    max-width: 36em;
   }
 }
 @media screen and (min-width: 601px) {
@@ -34,5 +35,6 @@
   }
   .scroll-text h3 {
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    max-width: 36em;
   }
 }
