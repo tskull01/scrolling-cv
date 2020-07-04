@@ -51,7 +51,7 @@ export default class signup extends Component<ISignupProps> {
         snackDiv: (
           <Snackbar
             open={true}
-            autoHideDuration={3000}
+            autoHideDuration={2000}
             onClose={this.handleClose}
           >
             <Alert onClose={this.handleClose} severity="success">
@@ -65,7 +65,7 @@ export default class signup extends Component<ISignupProps> {
         snackDiv: (
           <Snackbar
             open={true}
-            autoHideDuration={3000}
+            autoHideDuration={2000}
             onClose={this.handleClose}
           >
             <Alert onClose={this.handleClose} severity="error">
@@ -90,7 +90,6 @@ export default class signup extends Component<ISignupProps> {
         />
         <TextField
           required
-          autoFocus={true}
           id="outlined-required"
           label="Password"
           type="password"

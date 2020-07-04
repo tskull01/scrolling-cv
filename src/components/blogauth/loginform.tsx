@@ -51,7 +51,7 @@ export default class loginform extends Component<ILoginProps> {
               snackDiv: (
                 <Snackbar
                   open={true}
-                  autoHideDuration={3000}
+                  autoHideDuration={2000}
                   onClose={this.handleClose}
                 >
                   <Alert onClose={this.handleClose} severity="success">
@@ -82,7 +82,7 @@ export default class loginform extends Component<ILoginProps> {
   showCheckingSnack = () => {
     this.setState({
       snackDiv: (
-        <Snackbar open={true} autoHideDuration={3000}>
+        <Snackbar open={true} autoHideDuration={2000}>
           <Alert severity="info">Checking your login</Alert>
         </Snackbar>
       ),
