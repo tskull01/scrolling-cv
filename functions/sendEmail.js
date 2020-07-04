@@ -20,7 +20,7 @@ exports.handler = function (event, context, callback) {
     if (error) {
       return console.log(error);
     }
-
+    console.log(body);
     callback(null, {
       statusCode: 200,
       body: `${body}`,
