@@ -47,8 +47,12 @@ export class Main extends Component {
     ],
     containerRef: createRef<HTMLDivElement>(),
     rerender: false,
+    scriptsLoaded: false,
   };
   componentDidMount() {
+    window.addEventListener("DOMContentLoaded", (event) => {
+      this.setState({ scriptsLoaded: true });
+    });
     if (window.screen.width > 601) {
       console.log("desktop");
       window.addEventListener("resize", this.handleResize);
@@ -146,7 +150,11 @@ export class Main extends Component {
           )}
         </div>
         <div className="section">
-          <Trailfinder />
+          {this.state.scriptsLoaded ? (
+            <Trailfinder />
+          ) : (
+            <div style={{ width: "100%", height: "100%" }}></div>
+          )}
         </div>
         <div className="section text-section">
           {this.state.textVisible[2].value ? (
