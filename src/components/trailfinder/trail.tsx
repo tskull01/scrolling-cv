@@ -44,10 +44,10 @@ export default class trail extends Component<ITrailProps> {
                 className="trail-imgs"
               />
               <div className="trail-detail">
-                <h4>
+                <h4 className="trail-name">
                   {trail.name} - {trail.location}
                 </h4>
-                <p>{trail.summary}</p>
+                <p className="trail-summary">{trail.summary}</p>
                 {trail.type === "Recommended Route" ? (
                   <Chip label="Recommended Route" variant="outlined" />
                 ) : (

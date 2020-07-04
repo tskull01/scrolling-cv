@@ -38,7 +38,7 @@
     height: 220px;
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 601px) and (max-width: 1000px) {
   .trail-container {
     display: grid;
     grid-template-rows: 20vh 80vh;
@@ -86,5 +86,41 @@
     object-fit: cover;
     width: 200px;
     height: 150px;
+  }
+  .trail-item {
+    display: flex;
+    height: 35vh;
+    width: 100%;
+    opacity: 1 !important;
+  }
+  .trail-container {
+    display: grid;
+    grid-template-rows: 20vh 80vh;
+    height: 100%;
+    width: 100%;
+  }
+  .search {
+    display: grid;
+    grid-template-rows: 10vh 10vh;
+    width: 99%;
+  }
+  .results {
+    overflow-y: scroll;
+    width: 100%;
+    -ms-overflow-style: none;
+  }
+  .results::-webkit-scrollbar {
+    display: none;
+  }
+  .result-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .trail-summary {
+    font-size: 1.8vh;
+  }
+  .trail-name {
+    font-size: 1.9vh;
   }
 }
