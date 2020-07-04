@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
-import IconButton, { IconButtonTypeMap } from "@material-ui/core/IconButton";
+import IconButton from "@material-ui/core/IconButton";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import "./ecommerce.css";
 import Cart from "./cart";

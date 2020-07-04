@@ -1,10 +1,10 @@
-import React, { Component, createRef, RefObject, Ref, useRef } from "react";
+import React, { Component } from "react";
 import Blogs from "./blogcontent";
 import Blog from "./blog";
 import "./blog.css";
 import Placeholder from "../../images/placeholder_16_9.png";
 import { gsap } from "gsap";
-import { fromEvent, Observable } from "rxjs";
+import { fromEvent } from "rxjs";
 
 interface IViewProps {
   selectedBlog: Blog;

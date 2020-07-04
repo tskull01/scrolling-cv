@@ -6,6 +6,7 @@ import Autocomplete, {
   AutocompleteInputChangeReason,
 } from "@material-ui/lab/Autocomplete";
 import Trail from "./trail";
+import { fromEvent } from "rxjs";
 class OptionObject {
   index: number;
   description: string;
@@ -148,25 +149,31 @@ export default class trailfinder extends Component {
     return this.state.options.includes(value);
   };
   componentDidMount() {
-    if (
-      this.state.autocomplete.current === null ||
-      (this.state.geocoder.current === null &&
-        (window as any).google.maps &&
-        (window as any)?.google?.maps.places)
-    ) {
-      let googleMaps = new (window as any)()?.google?.maps.Geocoder();
-      let googlePlaces = new (window as any)()?.google?.maps.places.AutocompleteService();
-      if (googleMaps && googlePlaces) {
-        this.setState({
-          autocomplete: {
-            current: googlePlaces,
-          },
-          geocoder: { current: googleMaps },
-        });
-      } else {
-        this.setState({ rerender: !this.state.rerender });
+    let windowSub = fromEvent(window, "DOMContentLoaded").subscribe(
+      (loaded) => {
+        if (
+          this.state.autocomplete.current === null ||
+          (this.state.geocoder.current === null &&
+            (window as any).google.maps &&
+            (window as any)?.google?.maps.places)
+        ) {
+          let googleMaps = new (window as any)()?.google?.maps.Geocoder();
+          let googlePlaces = new (window as any)()?.google?.maps.places.AutocompleteService();
+          if (googleMaps && googlePlaces) {
+            this.setState({
+              autocomplete: {
+                current: googlePlaces,
+              },
+              geocoder: { current: googleMaps },
+            });
+            windowSub.unsubscribe();
+          } else {
+            this.setState({ rerender: !this.state.rerender });
+          }
+        }
       }
-    }
+    );
+
     //Sets original value to Boulder, CO
     this.optionSelected("ChIJ06-NJ06Na4cRWIAboHw7Ocg");
   }

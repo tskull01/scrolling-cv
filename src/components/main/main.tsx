@@ -9,7 +9,7 @@ import Contact from "../contact/contact";
 import "./main.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { from, Observable, of, fromEvent } from "rxjs";
+import { fromEvent } from "rxjs";
 
 export class Main extends Component {
   state = {
@@ -100,7 +100,6 @@ export class Main extends Component {
       //mobile layout no animation
     }
   }
-
   handleResize = () => {
     //Resizes container on screen resize
     console.log("resize");
@@ -112,21 +111,6 @@ export class Main extends Component {
     arrayItem.originalLeft = element.getBoundingClientRect().left;
     arrayItem.originalRight = element.getBoundingClientRect().right;
     return arrayItem;
-  };
-  testEmail = () => {
-    let email = "tskulley29@yahoo.com";
-    let emailAnswer = from(
-      fetch("/.netlify/functions/sendEmail", {
-        body: JSON.stringify({
-          email: email,
-        }),
-        method: "POST",
-      })
-    );
-    emailAnswer.subscribe((answer) => {
-      answer.headers.forEach((header) => console.log(header));
-    });
-    return emailAnswer;
   };
   render() {
     return (
