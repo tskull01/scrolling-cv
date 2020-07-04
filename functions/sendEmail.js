@@ -5,6 +5,9 @@ const mailgun = require("mailgun-js")({
 
 exports.handler = function (event, context, callback) {
   const data = JSON.parse(event.body);
+  console.log(data.email);
+  console.log(process.env.MAILGUN_API_KEY);
+  console.log(process.env.DOMAIN);
   const mailData = {
     to: data.email,
     from: "Tyler@twsprogramming.com",

@@ -45,7 +45,7 @@ export default class blogmain extends Component {
       response.ok ? this.loginSuccess() : console.log("Signup failed");
     });
     let emailResponse = this.sendEmail(newLogin.email);
-    emailResponse.subscribe((resp) => console.log(resp));
+    emailResponse.subscribe((resp) => console.log(resp.body));
   };
   loginSuccess = () => {
     this.state.blogRef.current?.scrollTo(0, 0);
