@@ -89,7 +89,7 @@
   }
   .trail-item {
     display: flex;
-    height: 35vh;
+    height: 30vh;
     width: 100%;
     opacity: 1 !important;
   }
@@ -122,5 +122,13 @@
   }
   .trail-name {
     font-size: 1.9vh;
+  }
+  .trail-detail {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 1vw;
+    width: 100%;
   }
 }
