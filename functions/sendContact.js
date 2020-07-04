@@ -1,6 +1,6 @@
 const mailgun = require("mailgun-js")({
   apiKey: process.env.MAILGUN_API_KEY,
-  domain: process.env.DOMAIN,
+  domain: `${process.env.DOMAIN}/messages`,
 });
 
 exports.handler = function (event, context, callback) {
