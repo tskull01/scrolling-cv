@@ -85,6 +85,7 @@
   .trail-item img {
     object-fit: cover;
     width: 50vw;
+    height: 95%;
   }
   .trail-item {
     display: flex;
