@@ -55,6 +55,7 @@ export default class trailfinder extends Component {
     predictionIds: new Array<string>(),
     trailsArray: new Array<TrailObject>(),
     loading: false,
+    rerender: false,
   };
   handleOnChange = (e: object, newValue: any) => {
     //Selection was made
@@ -153,12 +154,18 @@ export default class trailfinder extends Component {
         (window as any).google.maps &&
         (window as any)?.google?.maps.places)
     ) {
-      this.setState({
-        autocomplete: {
-          current: new (window as any)()?.google?.maps.places.AutocompleteService(),
-        },
-        geocoder: { current: new (window as any)()?.google?.maps.Geocoder() },
-      });
+      let googleMaps = new (window as any)()?.google?.maps.Geocoder();
+      let googlePlaces = new (window as any)()?.google?.maps.places.AutocompleteService();
+      if (googleMaps && googlePlaces) {
+        this.setState({
+          autocomplete: {
+            current: googlePlaces,
+          },
+          geocoder: { current: googleMaps },
+        });
+      } else {
+        this.setState({ rerender: !this.state.rerender });
+      }
     }
     //Sets original value to Boulder, CO
     this.optionSelected("ChIJ06-NJ06Na4cRWIAboHw7Ocg");
