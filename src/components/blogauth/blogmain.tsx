@@ -38,7 +38,6 @@ export default class blogmain extends Component {
     });
   };
   signupSubmit = (newLogin: Login) => {
-    console.log(newLogin, "signup submit");
     //add new signup info to the database and logged in goes to true
     let response = this.createLogin(newLogin);
     response.subscribe((response) => {
@@ -58,7 +57,7 @@ export default class blogmain extends Component {
   createLogin = (newLogin: Login) => {
     //Create the login if successful change login status and send them to the last view
     let signupComplete = from(
-      fetch("/.netlify/functions/addLogin", {
+      fetch("https://www.twsprogramming.com/.netlify/functions/addLogin", {
         //PROD PATH https://www.twsprogramming.com/.netlify/functions/addLogin
         body: JSON.stringify(newLogin),
         method: "POST",
@@ -69,7 +68,7 @@ export default class blogmain extends Component {
   checkLogin = (attemptedLogin: Login): Observable<any> => {
     //query database for login info
     let loginAnswer = from(
-      fetch("/.netlify/functions/checkLogin", {
+      fetch("https://www.twsprogramming.com/.netlify/functions/checkLogin", {
         //PROD PATH https://www.twsprogramming.com/.netlify/functions/checkLogin
         body: JSON.stringify({
           email: attemptedLogin.email,
@@ -83,7 +82,7 @@ export default class blogmain extends Component {
   sendEmail = (email: string): Observable<any> => {
     //query database for login info
     let emailAnswer = from(
-      fetch("/.netlify/functions/sendEmail", {
+      fetch("https://www.twsprogramming.com/.netlify/functions/sendEmail", {
         //PROD PATH https://www.twsprogramming.com/.netlify/functions/sendEmail
         body: JSON.stringify({
           email: email,

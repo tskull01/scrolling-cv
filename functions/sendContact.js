@@ -3,25 +3,26 @@ const mailgun = require("mailgun-js")({
   domain: process.env.DOMAIN,
 });
 
-exports.handler = function (event, context, callback) {
+exports.handler = async function (event, context) {
   const data = JSON.parse(event.body);
-  console.log(data.email);
-
+  const myEmail = process.env.MY_EMAIL;
+  const domainEmail = process.env.DOMAIN_EMAIL;
   const mailData = {
-    to: "skulley.tyler@gmail.com",
-    from: data.email,
+    to: myEmail,
+    from: domainEmail,
     subject: data.name,
     text: data.message,
   };
-
-  mailgun.messages().send(mailData, (error, body) => {
-    if (error) {
-      return console.log(error);
+  await mailgun.messages().send(mailData, (e, body) => {
+    if (e) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify(e),
+      };
     }
-
-    callback(null, {
-      statusCode: 200,
-      body: `Mail sent ${body}`,
-    });
   });
+  return {
+    statusCode: 200,
+    body: JSON.stringify("Mail sent"),
+  };
 };

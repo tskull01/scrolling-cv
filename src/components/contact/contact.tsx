@@ -13,8 +13,12 @@ export class contact extends Component {
   };
 
   sendContact = () => {
+    console.log(this.state.userName);
+    console.log(this.state.userEmail);
+
     let emailAnswer = from(
       fetch("https://www.twsprogramming.com/.netlify/functions/sendContact", {
+        //PROD ADDRESS https://www.twsprogramming.com/.netlify/functions/sendContact
         body: JSON.stringify({
           name: this.state.userName,
           email: this.state.userEmail,
@@ -27,8 +31,19 @@ export class contact extends Component {
       this.setState({ emailSent: true });
     });
   };
-  setValue = (e: any, value: string) => {
-    this.setState({ value: e.target.value });
+  setValue = (e: any, property: string) => {
+    switch (property) {
+      case "name":
+        this.setState({ userName: e.target.value });
+        break;
+      case "email":
+        this.setState({ userEmail: e.target.value });
+        break;
+      case "message":
+        this.setState({ userMessage: e.target.value });
+        break;
+    }
+    this.setState({ property: e.target.value });
   };
   render() {
     let contactCurrent = this.state.emailSent ? (
@@ -45,7 +60,7 @@ export class contact extends Component {
             fullWidth={true}
             type="search"
             variant="outlined"
-            onChange={(e) => this.setValue(e, "userName")}
+            onChange={(e) => this.setValue(e, "name")}
           />
           <TextField
             id="contact-email"
@@ -53,7 +68,7 @@ export class contact extends Component {
             type="search"
             fullWidth={true}
             variant="outlined"
-            onChange={(e) => this.setValue(e, "userEmail")}
+            onChange={(e) => this.setValue(e, "email")}
           />
           <TextField
             id="outlined-search"
@@ -63,7 +78,7 @@ export class contact extends Component {
             fullWidth={true}
             multiline
             rows={3}
-            onChange={(e) => this.setValue(e, "userMessage")}
+            onChange={(e) => this.setValue(e, "message")}
           />
         </div>
         <div className="contact-button">

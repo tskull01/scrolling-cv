@@ -12,11 +12,11 @@ export default class trail extends Component<ITrailProps> {
   state = {
     imagesLoading: true,
   };
-  componentDidUpdate() {
-    gsap.from(".result-item", {
+  componentDidMount() {
+    gsap.from(".trail-item", {
       duration: 1.3,
-      y: "-30vw",
       opacity: 0,
+      yPercent: -10,
       ease: "linear",
     });
   }
@@ -33,31 +33,29 @@ export default class trail extends Component<ITrailProps> {
 
   render() {
     let trailInfo =
-      this.props.trails.length < 1 ? (
-        <h5 style={{ alignSelf: "center" }}>No results found</h5>
-      ) : (
-        this.props.trails.map((trail: any, i: number) => (
-          <div className="trail-item" key={trail.name}>
-            <img
-              src={trail.imageSrc !== "" ? trail.imageSrc : trailDefault}
-              alt=""
-              onLoad={(e) => this.fadeIn(i)}
-              className="trail-imgs"
-            />
-            <div className="trail-detail">
-              <h4>
-                {trail.name} - {trail.location}
-              </h4>
-              <p>{trail.summary}</p>
-              {trail.type === "Recommended Route" ? (
-                <Chip label="Recommended Route" variant="outlined" />
-              ) : (
-                <div></div>
-              )}
+      this.props.trails.length < 1
+        ? null
+        : this.props.trails.map((trail: any, i: number) => (
+            <div className="trail-item" key={trail.name}>
+              <img
+                src={trail.imageSrc !== "" ? trail.imageSrc : trailDefault}
+                alt=""
+                onLoad={(e) => this.fadeIn(i)}
+                className="trail-imgs"
+              />
+              <div className="trail-detail">
+                <h4>
+                  {trail.name} - {trail.location}
+                </h4>
+                <p>{trail.summary}</p>
+                {trail.type === "Recommended Route" ? (
+                  <Chip label="Recommended Route" variant="outlined" />
+                ) : (
+                  <div></div>
+                )}
+              </div>
             </div>
-          </div>
-        ))
-      );
+          ));
     return <div className="result-flex">{trailInfo}</div>;
   }
 }

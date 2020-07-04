@@ -107,7 +107,6 @@ export default class trailfinder extends Component {
     let optionDescriptions = newOptions.map(
       (optionObject: OptionObject) => optionObject.description
     );
-    console.log(newOptions[0].description);
     let optionIds = array.map((prediction: any) => prediction.place_id);
     this.setState({
       options: optionDescriptions,
@@ -210,10 +209,14 @@ export default class trailfinder extends Component {
               : { overflow: "hidden" }
           }
         >
+          {this.state.trailsArray.length > 2 ? null : (
+            <h5 style={{ alignSelf: "center" }}>No results found</h5>
+          )}
           {this.state.loading ? (
             <CircularProgress style={{ margin: "3vw" }} />
-          ) : null}
-          <Trail trails={this.state.trailsArray} />
+          ) : (
+            <Trail trails={this.state.trailsArray} />
+          )}
         </div>
       </div>
     );
