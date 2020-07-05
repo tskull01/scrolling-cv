@@ -37,12 +37,14 @@ export default class trail extends Component<ITrailProps> {
         ? null
         : this.props.trails.map((trail: any, i: number) => (
             <div className="trail-item" key={trail.name}>
-              <img
-                src={trail.imageSrc !== "" ? trail.imageSrc : trailDefault}
-                alt=""
-                onLoad={(e) => this.fadeIn(i)}
-                className="trail-imgs"
-              />
+              <div>
+                <img
+                  src={trail.imageSrc !== "" ? trail.imageSrc : trailDefault}
+                  alt=""
+                  onLoad={(e) => this.fadeIn(i)}
+                  className="trail-imgs"
+                />
+              </div>
               <div className="trail-detail">
                 <h4 className="trail-name">
                   {trail.name} - {trail.location}
