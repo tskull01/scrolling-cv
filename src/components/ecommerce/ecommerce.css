@@ -37,8 +37,7 @@
   .itemlayout {
     display: grid;
     grid-template-columns: 90vw;
-    overflow-y: scroll;
-    -ms-overflow-style: none;
+    height: 100%;
   }
   .itemlayout::-webkit-scrollbar {
     display: none;
