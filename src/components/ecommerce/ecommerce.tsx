@@ -10,9 +10,9 @@ import Item from "./item";
 import alphacross1 from "./../../images/alphacross/alphacross-black.jpg";
 import alphacross2 from "./../../images/alphacross/alphacross-blue.jpg";
 import alphacross3 from "./../../images/alphacross/alphacross-white.jpg";
-import speedcross1 from "./../../images/speedcross/speedcross-black.jpg";
+import speedcross1 from "./../../images/speedcross/speedcross-red.jpg";
 import speedcross2 from "./../../images/speedcross/speedcross-green.jpg";
-import speedcross3 from "./../../images/speedcross/speedcross-red.jpg";
+import speedcross3 from "./../../images/speedcross/speedcross-black.jpg";
 import senseride1 from "./../../images/sense-ride/sense-ride-black.jpg";
 import senseride2 from "./../../images/sense-ride/sense-ride-blue.jpg";
 import senseride3 from "./../../images/sense-ride/sense-ride-pearl.jpg";
@@ -22,9 +22,18 @@ import supercross3 from "./../../images/supercross/supercross-grey.jpg";
 import ultrapro1 from "./../../images/ultra-pro/ultra-pro-bluestone.jpg";
 import ultrapro2 from "./../../images/ultra-pro/ultra-pro-ocean.jpg";
 import ultrapro3 from "./../../images/ultra-pro/ultra-pro-orange.jpg";
-import xapro1 from "./../../images/xa-pro/xa-pro-black.jpg";
+import xapro1 from "./../../images/xa-pro/xa-pro-orange.jpg";
 import xapro2 from "./../../images/xa-pro/xa-pro-blue.jpg";
-import xapro3 from "./../../images/xa-pro/xa-pro-orange.jpg";
+import xapro3 from "./../../images/xa-pro/xa-pro-black.jpg";
+import sensepro1 from "../../images/sense-pro/sense-pro-blue.jpg";
+import sensepro2 from "../../images/sense-pro/sense-pro-black.jpg";
+import speedgtx1 from "./../../images/speedcross-gtx/speedcross-gtx-blue.jpg";
+import speedgtx2 from "./../../images/speedcross-gtx/speedcross-gtx-brick.jpg";
+import speedgtx3 from "./../../images/speedcross-gtx/speedcross-gtx-green.jpg";
+import xawild1 from "./../../images/xa-wild/xa-wild-olive.jpg";
+import xawild2 from "./../../images/xa-wild/xa-wild-black.jpg";
+import xawild3 from "./../../images/xa-wild/xa-wild-quiet.jpg";
+
 import { gsap } from "gsap";
 
 interface IComProps {}
@@ -47,7 +56,10 @@ export class Ecommerce extends Component<IComProps, IComState> {
       new Item("speedcross", [speedcross1, speedcross2, speedcross3]),
       new Item("supercross", [supercross1, supercross2, supercross3]),
       new Item("ultrapro", [ultrapro1, ultrapro2, ultrapro3]),
-      new Item("xapro", [xapro1, xapro2, xapro3]),
+      new Item("xa pro", [xapro1, xapro2, xapro3]),
+      new Item("sensepro", [sensepro1, sensepro2]),
+      new Item("speedcross gtx", [speedgtx1, speedgtx2, speedgtx3]),
+      new Item("xa wild", [xawild1, xawild2, xawild3]),
     ],
 
     selectedItem: { name: "", images: [] },
