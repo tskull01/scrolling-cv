@@ -37,6 +37,7 @@ class intro extends Component {
         ? "intro-photo"
         : "intro-photo hide-photo ";
     }
+    //Netlify LFS Test
     let photoTransform =
       window.screen.width > 601
         ? `${myPhoto}?nf_resize=fit&w=900`
