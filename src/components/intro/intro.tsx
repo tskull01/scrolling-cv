@@ -40,8 +40,8 @@ class intro extends Component {
     //Netlify LFS Test
     let photoTransform =
       window.screen.width > 601
-        ? `${myPhoto}?nf_resize=fit&w=900`
-        : `${myPhoto}?nf_resize=fit&w=600`;
+        ? `${myPhoto}?nf_resize=fit&w=800`
+        : `${myPhoto}?nf_resize=fit&w=500`;
     return (
       <div className="intro-container">
         <div className="intro-text">
