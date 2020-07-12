@@ -34,7 +34,7 @@ export default class blogfull extends Component<IBlogProps> {
               </div>
               <div className="blog-bottom">
                 <img
-                  src={blog.imageSrc + "?nf_resize=fit&w=500"}
+                  src={`${blog.imageSrc}?nf_resize=fit&w=500`}
                   alt=""
                   className="blog-image"
                 />
