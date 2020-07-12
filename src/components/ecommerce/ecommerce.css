@@ -9,7 +9,7 @@
   }
   .ecommerce {
     display: grid;
-    grid-template-rows: 7vh 93vh;
+    grid-template-rows: 7vh 85vh;
     max-width: 100%;
   }
   .navgrid {
@@ -38,6 +38,8 @@
     display: grid;
     grid-template-columns: 90vw;
     height: 100%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
   }
   .itemlayout::-webkit-scrollbar {
     display: none;

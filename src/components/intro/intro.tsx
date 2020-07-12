@@ -37,6 +37,10 @@ class intro extends Component {
         ? "intro-photo"
         : "intro-photo hide-photo ";
     }
+    let photoTransform =
+      window.screen.width > 601
+        ? `${myPhoto} + ?nf_resize=fit&w=900`
+        : `${myPhoto} + ?nf_resize=fit&w=600`;
     return (
       <div className="intro-container">
         <div className="intro-text">
@@ -51,14 +55,14 @@ class intro extends Component {
         <div className="intro-grid">
           {this.state.imgLoaded ? (
             <img
-              src={myPhoto}
+              src={photoTransform}
               onLoad={this.imgLoaded}
               className="intro-photo "
             />
           ) : (
             <div>
               <img
-                src={myPhoto}
+                src={photoTransform}
                 onLoad={this.imgLoaded}
                 className="intro-photo "
                 style={{ display: "none" }}
