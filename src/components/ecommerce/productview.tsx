@@ -33,7 +33,7 @@ export default class productview extends Component<IViewProps> {
             {this.props.selectedItem.images.map((image, i) => {
               return (
                 <img
-                  src={image}
+                  src={`${image}?nf_resize=fit&w=300`}
                   alt="Alternate display options"
                   key={i}
                   onClick={(e) => this.imageClick(i)}
