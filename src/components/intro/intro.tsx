@@ -39,8 +39,8 @@ class intro extends Component {
     }
     let photoTransform =
       window.screen.width > 601
-        ? `${myPhoto}?nf_resize=fit&w=900`
-        : `${myPhoto}?nf_resize=fit&w=600`;
+        ? `/static/media/me.2de7b2c3.jpg?nf_resize=fit&w=900`
+        : `/static/media/me.2de7b2c3.jpg?nf_resize=fit&w=600`;
     return (
       <div className="intro-container">
         <div className="intro-text">
