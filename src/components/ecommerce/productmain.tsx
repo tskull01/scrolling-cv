@@ -25,7 +25,7 @@ export default class productmain extends Component<IMainProps> {
         className="item"
         id="item"
         key={i}
-        src={`${item.images[0]}?nf_resize=fit&w=400`}
+        src={item.images[0]}
         alt=""
         onClick={(e) => this.props.selectedItem(e, item)}
       />

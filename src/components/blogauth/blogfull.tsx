@@ -33,11 +33,7 @@ export default class blogfull extends Component<IBlogProps> {
                 </div>
               </div>
               <div className="blog-bottom">
-                <img
-                  src={`${blog.imageSrc}?nf_resize=fit&w=500`}
-                  alt=""
-                  className="blog-image"
-                />
+                <img src={blog.imageSrc} alt="" className="blog-image" />
                 <p style={{ margin: "1vw" }}>{blog.summary}</p>
               </div>
             </div>

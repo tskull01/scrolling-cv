@@ -55,14 +55,14 @@ class intro extends Component {
         <div className="intro-grid">
           {this.state.imgLoaded ? (
             <img
-              src={photoTransform}
+              src={myPhoto}
               onLoad={this.imgLoaded}
               className="intro-photo "
             />
           ) : (
             <div>
               <img
-                src={photoTransform}
+                src={myPhoto}
                 onLoad={this.imgLoaded}
                 className="intro-photo "
                 style={{ display: "none" }}
