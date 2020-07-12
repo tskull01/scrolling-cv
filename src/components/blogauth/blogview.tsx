@@ -60,7 +60,7 @@ export default class blogview extends Component<IViewProps> {
         <div className="article-grid">
           {this.state.imgLoaded ? (
             <img
-              src={imageSrc}
+              src={`${imageSrc}?nf_resize=fit&w=600`}
               className="article-img"
               onLoad={this.imgLoaded}
               id="article-img"
@@ -69,7 +69,7 @@ export default class blogview extends Component<IViewProps> {
           ) : (
             <div>
               <img
-                src={imageSrc}
+                src={`${imageSrc}?nf_resize=fit&w=600`}
                 className="article-img"
                 onLoad={this.imgLoaded}
                 id="article-img"
