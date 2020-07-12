@@ -9,12 +9,10 @@ interface IBlogProps {
 }
 
 export default class blogfull extends Component<IBlogProps> {
-  handleClick = () => {
-    console.log("clicked");
-  };
   render() {
     let currentView =
       window.screen.width > 600 ? (
+        //Desktop
         <div className="blog-flex">
           {Blogs.map((blog) => (
             <div key={blog.title} className="blog-inner">
@@ -33,13 +31,18 @@ export default class blogfull extends Component<IBlogProps> {
                 </div>
               </div>
               <div className="blog-bottom">
-                <img src={blog.imageSrc} alt="" className="blog-image" />
+                <img
+                  src={`${blog.imageSrc}?nf_resize=fit&w=800`}
+                  alt=""
+                  className="blog-image"
+                />
                 <p style={{ margin: "1vw" }}>{blog.summary}</p>
               </div>
             </div>
           ))}
         </div>
       ) : (
+        //Mobile
         <div className="blog-flex">
           {Blogs.map((blog) => (
             <div className="blog-inner" key={blog.title}>
@@ -57,7 +60,11 @@ export default class blogfull extends Component<IBlogProps> {
                 </div>
               </div>
               <div className="blog-bottom">
-                <img src={blog.imageSrc} alt="" className="blog-image" />
+                <img
+                  src={`${blog.imageSrc}?nf_resize=fit&w=600`}
+                  alt=""
+                  className="blog-image"
+                />
                 <p style={{ margin: "1vw" }}>{blog.summary}</p>
               </div>
             </div>
