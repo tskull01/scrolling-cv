@@ -25,9 +25,11 @@
     "react-gsap": "^2.2.1",
     "react-scripts": "3.4.1",
     "rxjs": "^6.5.5",
+    "source-map-explorer": "^2.4.2",
     "typescript": "^3.9.5"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
