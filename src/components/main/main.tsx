@@ -128,7 +128,7 @@ export class Main extends Component {
         </div>
         <div className="section text-section">
           {this.state.textVisible[1].value ? (
-            <Scrollingtext text="This can be applied in a multitude of ways, but this example uses a Google API to offer location options. The user selection is then converted into a set of longitude and latitude. That location set is used by another API with trail information to query and display the data. " />
+            <Scrollingtext text="This can be applied in a multitude of ways, but this example uses a Google Maps API to offer location options. The user selection is then converted into a set of longitude and latitude. That location set is used by another API with trail information to query and display the data. " />
           ) : (
             <div style={{ width: "100%", height: "100%" }}></div>
           )}
